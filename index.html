@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Matrix - CTF Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="matrix-rain" id="matrixRain"></div>
+
+    <header class="header">
+        <h1 class="title glitch" data-text="CHALLENGE MATRIX">CHALLENGE MATRIX</h1>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-text" id="progressText">Progress: 0/3 Challenges Completed</div>
+    </header>
+
+    <main class="main-container">
+        <div class="challenges-grid" id="challengesGrid">
+            <!-- Challenge cards will be dynamically generated -->
+        </div>
+
+        <div class="audio-controls">
+            <button class="btn btn-secondary" id="muteBtn">🔊 Audio On</button>
+            <input type="range" id="volumeSlider" min="0" max="100" value="70" class="volume-slider">
+        </div>
+    </main>
+
+    <!-- Challenge Modal -->
+    <div class="modal hidden" id="challengeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle"></h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="challenge-info">
+                    <div class="difficulty-badge" id="modalDifficulty"></div>
+                    <p id="modalDescription" class="typing-text"></p>
+                </div>
+                <div class="flag-input-section">
+                    <label for="flagInput" class="form-label">Enter Flag:</label>
+                    <input type="text" id="flagInput" class="form-control neon-input" placeholder="CTF{...}">
+                    <button class="btn btn-primary" id="submitFlag">Submit Flag</button>
+                </div>
+                <div class="challenge-actions">
+                    <button class="btn btn-download" id="downloadBtn" disabled>
+                        📁 Download Challenge
+                    </button>
+                </div>
+                <div class="feedback-message" id="feedbackMessage"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay hidden" id="overlay"></div>
+
+    <!-- Success Effects -->
+    <div class="success-effects" id="successEffects">
+        <div class="particles"></div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Challenge Matrix | Hack The Planet</p>
+        <p class="instructions">Enter the correct flags to unlock challenges and download files</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

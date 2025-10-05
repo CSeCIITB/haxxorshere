@@ -1,0 +1,5 @@
+Placeholder for voice1.mp3
+
+Voice message: "Congratulations! You've taken your first step into the matrix."
+
+Note: Replace this text file with actual MP3 audio file.

@@ -1,0 +1,5 @@
+Placeholder for voice2.mp3
+
+Voice message: "Excellent work, crypto master. The codes bend to your will."
+
+Note: Replace this text file with actual MP3 audio file.
