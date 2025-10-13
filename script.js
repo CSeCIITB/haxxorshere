@@ -10,7 +10,7 @@ const challengesData = [
         flag_hash: "6a4688f04bdbd0ea3a98edd5f9b021336c83bfab988dd26886d2e9428ba1b04c", //haxxor{1_4m_B4tm4n}
         unlocked: true,
         completed: false,
-        zipFile: "challenges/challenge1.zip",
+        zipFile: "challenge1.zip",
         audioFile: "voice1.mp3"
     },
     {
@@ -21,7 +21,7 @@ const challengesData = [
         flag_hash: "3a285f67244bc8d0c1d61e72b7d64752c405d100dbd9aae6dc02c9d057febec5",//haxxor{th3_b1gg3r_th3_b3tt3r}
         unlocked: false,
         completed: false,
-        zipFile: "challenges/challenge2.zip",
+        zipFile: "challenge2.zip",
         audioFile: "voice2.mp3"
     },
     {
@@ -32,7 +32,7 @@ const challengesData = [
         flag_hash: "CTF{final_boss}",
         unlocked: false,
         completed: false,
-        zipFile: "challenges/challenge3.zip",
+        zipFile: "challenge3.zip",
         audioFile: "voice3.mp3"
     }
 ];
