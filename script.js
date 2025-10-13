@@ -15,7 +15,7 @@ const challengesData = [
     },
     {
         id: 2,
-        title: "Cipher Nexus", 
+        title: "Cipher Nexus",
         difficulty: "Medium",
         description: "The ancient art of cryptography holds the key. Decode the encrypted transmission.",
         flag_hash: "3a285f67244bc8d0c1d61e72b7d64752c405d100dbd9aae6dc02c9d057febec5",//haxxor{th3_b1gg3r_th3_b3tt3r}
@@ -27,7 +27,7 @@ const challengesData = [
     {
         id: 3,
         title: "System Override",
-        difficulty: "Hard", 
+        difficulty: "Hard",
         description: "The final barrier stands before you. Break through the last firewall.",
         flag_hash: "CTF{final_boss}",
         unlocked: false,
@@ -41,7 +41,7 @@ const challengesData = [
 // Audio messages for each challenge
 const audioMessages = {
     voice1: "Congratulations! You've taken your first step into the matrix.",
-    voice2: "Excellent work, crypto master. The codes bend to your will.", 
+    voice2: "Excellent work, crypto master. The codes bend to your will.",
     voice3: "System compromised. You are the chosen one. Welcome to the real world."
 };
 
@@ -193,7 +193,7 @@ function showModal(challenge) {
 
     // Update download button
     downloadBtn.disabled = false;
-    downloadBtn.innerHTML = '📁 Download Challenge' 
+    downloadBtn.innerHTML = '📁 Download Challenge'
     // Clear previous feedback and input
     feedbackMessage.innerHTML = '';
     feedbackMessage.className = 'feedback-message';
@@ -367,7 +367,6 @@ function handleDownload() {
     document.body.removeChild(link);
 }
 
-
 // Update progress display
 function updateProgress() {
     const completedChallenges = currentChallenges.filter(c => c.completed).length;
@@ -466,4 +465,3 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
-
