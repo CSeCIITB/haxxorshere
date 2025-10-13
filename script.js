@@ -356,7 +356,7 @@ function showSuccessEffects() {
 function handleDownload() {
     if (!currentChallengeId) return;
 
-    const challenge = currentChallenges.find(c => c.id === currentChallengeId);
+    const challenge = challengesData.find(c => c.id === currentChallengeId);
     if (!challenge.completed) return;
 
     const link = document.createElement("a");
