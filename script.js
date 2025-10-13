@@ -359,8 +359,12 @@ function handleDownload() {
     const challenge = currentChallenges.find(c => c.id === currentChallengeId);
     if (!challenge.completed) return;
 
-    // Since we can't provide actual zip files, show a message
-    alert(`Download would start for: ${challenge.zipFile}\n\nNote: This is a demo. In a real implementation, the ZIP file would be downloaded from the challenges/ folder.`);
+    const link = document.createElement("a");
+    link.href = challenge.zipFile;  // e.g. "challenge1.zip"
+    link.download = challenge.zipFile.split('/').pop();  // Use file name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 }
 
 // Update progress display
