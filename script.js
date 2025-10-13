@@ -4,10 +4,10 @@
 const challengesData = [
     {
         id: 1,
-        title: "Digital Awakening",
+        title: "Secrets of Batpool",
         difficulty: "Easy",
-        description: "Welcome to the matrix. Your first test begins here. Find the hidden message in the simulation.",
-        flag: "CTF{welcome_to_the_matrix}",
+        description: "",
+        flag_hash: "6a4688f04bdbd0ea3a98edd5f9b021336c83bfab988dd26886d2e9428ba1b04c", //haxxor{1_4m_B4tm4n}
         unlocked: true,
         completed: false,
         zipFile: "challenges/challenge1.zip",
@@ -18,7 +18,7 @@ const challengesData = [
         title: "Cipher Nexus", 
         difficulty: "Medium",
         description: "The ancient art of cryptography holds the key. Decode the encrypted transmission.",
-        flag: "CTF{crypto_master}",
+        flag_hash: "3a285f67244bc8d0c1d61e72b7d64752c405d100dbd9aae6dc02c9d057febec5",//haxxor{th3_b1gg3r_th3_b3tt3r}
         unlocked: false,
         completed: false,
         zipFile: "challenges/challenge2.zip",
@@ -29,13 +29,14 @@ const challengesData = [
         title: "System Override",
         difficulty: "Hard", 
         description: "The final barrier stands before you. Break through the last firewall.",
-        flag: "CTF{final_boss}",
+        flag_hash: "CTF{final_boss}",
         unlocked: false,
         completed: false,
         zipFile: "challenges/challenge3.zip",
         audioFile: "audio/voice3.mp3"
     }
 ];
+
 
 // Audio messages for each challenge
 const audioMessages = {
@@ -212,13 +213,23 @@ function hideModal() {
 }
 
 // Handle flag submission
-function handleFlagSubmission() {
+async function handleFlagSubmission() {
     if (!currentChallengeId) return;
 
-    const challenge = currentChallenges.find(c => c.id === currentChallengeId);
+    const challenge = challengesData.find(c => c.id === currentChallengeId);
     const submittedFlag = flagInput.value.trim();
 
-    if (submittedFlag === challenge.flag) {
+    // Compute SHA-256 hash of the submitted flag
+    const enc = new TextEncoder().encode(submittedFlag);
+    const hashBuffer = await crypto.subtle.digest("SHA-256", enc);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+    console.log(submittedFlag);
+    console.log(hashHex);
+    console.log(challenge.flag_hash);
+
+    // Compare hashed flag to stored hash
+    if (hashHex === challenge.flag_hash) {
         handleCorrectFlag(challenge);
     } else {
         handleIncorrectFlag();
