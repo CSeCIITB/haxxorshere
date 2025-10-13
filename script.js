@@ -462,20 +462,3 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Console easter egg
-console.log(`
-╔══════════════════════════════════════╗
-║        CHALLENGE MATRIX v1.0         ║
-║                                      ║
-║  Welcome to the digital realm!       ║
-║  Solve challenges, unlock mysteries  ║
-║  and become the chosen one.          ║
-║                                      ║
-║  Flags:                              ║
-║  1. CTF{welcome_to_the_matrix}      ║
-║  2. CTF{crypto_master}              ║
-║  3. CTF{final_boss}                 ║
-║                                      ║
-║  Good luck, Neo... 🕶️               ║
-╚══════════════════════════════════════╝
-`);
