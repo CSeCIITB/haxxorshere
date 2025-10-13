@@ -11,7 +11,7 @@ const challengesData = [
         unlocked: true,
         completed: false,
         zipFile: "challenges/challenge1.zip",
-        audioFile: "audio/voice1.mp3"
+        audioFile: "voice1.mp3"
     },
     {
         id: 2,
@@ -22,7 +22,7 @@ const challengesData = [
         unlocked: false,
         completed: false,
         zipFile: "challenges/challenge2.zip",
-        audioFile: "audio/voice2.mp3"
+        audioFile: "voice2.mp3"
     },
     {
         id: 3,
@@ -33,7 +33,7 @@ const challengesData = [
         unlocked: false,
         completed: false,
         zipFile: "challenges/challenge3.zip",
-        audioFile: "audio/voice3.mp3"
+        audioFile: "voice3.mp3"
     }
 ];
 
@@ -294,19 +294,27 @@ function showFeedback(message, type) {
 function playVictoryAudio(challenge) {
     if (isMuted) return;
 
-    // Use text-to-speech for voice messages (since we can't load actual audio files)
-    const audioKey = `voice${challenge.id}`;
-    const message = audioMessages[audioKey];
+    // Each challenge already has an audioFile property like: "audio/voice1.mp3"
+    const audioPath = challenge.audioFile;
+    console.log(audioPath);
 
-    if ('speechSynthesis' in window) {
-        const utterance = new SpeechSynthesisUtterance(message);
-        utterance.volume = currentVolume;
-        utterance.rate = 0.8;
-        utterance.pitch = 1;
-        speechSynthesis.speak(utterance);
+    // Stop any currently playing victory audio (optional but recommended)
+    if (window.currentVictoryAudio) {
+        window.currentVictoryAudio.pause();
+        window.currentVictoryAudio.currentTime = 0;
     }
 
-    // Also play a simple beep sound
+    // Create a new Audio object and play it
+    const audio = new Audio(audioPath);
+    audio.volume = currentVolume;  // Use your existing volume variable (0–1)
+    audio.play().catch(err => {
+        console.error("Audio playback failed:", err);
+    });
+
+    // Save reference so we can stop it next time if needed
+    window.currentVictoryAudio = audio;
+
+    // Optional: also play a short beep overlay if you still want it
     playBeepSound();
 }
 
