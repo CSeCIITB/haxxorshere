@@ -354,18 +354,19 @@ function showSuccessEffects() {
 
 // Handle file download
 function handleDownload() {
+
     if (!currentChallengeId) return;
 
     const challenge = challengesData.find(c => c.id === currentChallengeId);
-    if (!challenge.completed) return;
 
     const link = document.createElement("a");
-    link.href = challenge.zipFile;  // e.g. "challenge1.zip"
+    link.href = 'https://github.com/CSeCIITB/haxxorshere/raw/master/' + challenge.zipFile;  // e.g. "challenge1.zip"
     link.download = challenge.zipFile.split('/').pop();  // Use file name
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 }
+
 
 // Update progress display
 function updateProgress() {
