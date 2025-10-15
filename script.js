@@ -34,17 +34,12 @@ const challengesData = [
         completed: false,
         zipFile: "challenge3.zip",
         audioFile: "voice3.mp3",
-        weblink: "https://wallbreaker.pythonanywhere.com/"
+        webLink: "https://wallbreaker.pythonanywhere.com/"
     }
 ];
 
 
-// Audio messages for each challenge
-const audioMessages = {
-    voice1: "Congratulations! You've taken your first step into the matrix.",
-    voice2: "Excellent work, crypto master. The codes bend to your will.",
-    voice3: "System compromised. You are the chosen one. Welcome to the real world."
-};
+
 
 // Global state
 let currentChallenges = [...challengesData];
@@ -193,8 +188,17 @@ function showModal(challenge) {
     typeText(modalDescription, challenge.description);
 
     // Update download button
-    downloadBtn.disabled = false;
-    downloadBtn.innerHTML = '📁 Download Challenge'
+    if (challenge.webLink) {
+        downloadBtn.disabled = false;
+        downloadBtn.innerHTML = '🌐 Launch Challenge';
+        downloadBtn.classList.remove('btn-download');
+        downloadBtn.classList.add('btn-launch');
+    } else {
+        downloadBtn.disabled = false;
+        downloadBtn.innerHTML = '📁 Download Challenge';
+        downloadBtn.classList.remove('btn-launch');
+        downloadBtn.classList.add('btn-download');
+    }
     // Clear previous feedback and input
     feedbackMessage.innerHTML = '';
     feedbackMessage.className = 'feedback-message';
