@@ -52,6 +52,7 @@ let currentChallenges = [...challengesData];
 let isMuted = false;
 let currentVolume = 0.7;
 let currentChallengeId = null;
+let typingTimeout = null;
 
 // DOM Elements
 const challengesGrid = document.getElementById('challengesGrid');
@@ -221,6 +222,11 @@ function hideModal() {
     challengeModal.classList.add('hidden');
     overlay.classList.add('hidden');
     currentChallengeId = null;
+
+    if (typingTimeout) {
+        clearTimeout(typingTimeout);
+        typingTimeout = null;
+    }
 }
 
 // Handle flag submission
@@ -424,11 +430,17 @@ function typeText(element, text, speed = 50) {
     element.textContent = '';
     let i = 0;
 
+    // Clear any previous typing timeout
+    if (typingTimeout) {
+        clearTimeout(typingTimeout);
+        typingTimeout = null;
+    }
+
     function type() {
         if (i < text.length) {
             element.textContent += text.charAt(i);
             i++;
-            setTimeout(type, speed);
+            typingTimeout = setTimeout(type, speed); // store the timeout
         }
     }
 
