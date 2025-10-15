@@ -33,7 +33,8 @@ const challengesData = [
         unlocked: false,
         completed: false,
         zipFile: "challenge3.zip",
-        audioFile: "voice3.mp3"
+        audioFile: "voice3.mp3",
+        weblink: "https://wallbreaker.pythonanywhere.com/"
     }
 ];
 
@@ -358,6 +359,10 @@ function handleDownload() {
     if (!currentChallengeId) return;
 
     const challenge = challengesData.find(c => c.id === currentChallengeId);
+    if (challenge.webLink) {
+        window.open(challenge.webLink, '_blank');
+        return;
+    }
 
     const link = document.createElement("a");
     link.href = 'https://github.com/CSeCIITB/haxxorshere/raw/master/' + challenge.zipFile;  // e.g. "challenge1.zip"
