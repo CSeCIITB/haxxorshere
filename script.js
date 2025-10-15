@@ -29,7 +29,7 @@ const challengesData = [
         title: "System Override",
         difficulty: "Hard",
         description: "The final barrier stands before you. Break through the last firewall.",
-        flag_hash: "CTF{final_boss}",
+        flag_hash: "5c2ebab3f8b54b66f6ed607eb326ceabe0b50eec01b65dd4df3ccec8f0da56b5", //CTF{final_boss}
         unlocked: false,
         completed: false,
         zipFile: "challenge3.zip",

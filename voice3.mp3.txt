@@ -1,5 +1,0 @@
-Placeholder for voice3.mp3
-
-Voice message: "System compromised. You are the chosen one. Welcome to the real world."
-
-Note: Replace this text file with actual MP3 audio file.
