@@ -414,16 +414,34 @@ function loadProgress() {
 }
 
 // Toggle mute
+// Toggle mute
 function toggleMute() {
     isMuted = !isMuted;
     muteBtn.innerHTML = isMuted ? '🔇 Audio Off' : '🔊 Audio On';
     muteBtn.classList.toggle('muted', isMuted);
+
+    // Pause or mute current audio immediately
+    if (window.currentVictoryAudio) {
+        if (isMuted) {
+            window.currentVictoryAudio.pause();
+        } else {
+            window.currentVictoryAudio.play().catch(err => console.error(err));
+        }
+    }
 }
 
+
+// Update volume
 // Update volume
 function updateVolume() {
     currentVolume = volumeSlider.value / 100;
+
+    // Update volume of currently playing audio
+    if (window.currentVictoryAudio) {
+        window.currentVictoryAudio.volume = currentVolume;
+    }
 }
+
 
 // Typing animation effect
 function typeText(element, text, speed = 50) {
