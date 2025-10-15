@@ -4,10 +4,16 @@
 const challengesData = [
     {
         id: 1,
-        title: "Secrets of Batpool",
+        title: "🦇Dark Secrets of GOTHAM",
         difficulty: "Easy",
-        description: "",
-        flag_hash: "6a4688f04bdbd0ea3a98edd5f9b021336c83bfab988dd26886d2e9428ba1b04c", //haxxor{1_4m_B4tm4n}
+        description: `📖 STORY
+A storm brews over Gotham.
+Amid thunder and sirens, you intercept a mysterious image of Batman — one that hides more than it shows.
+Rumor has it Bruce Wayne left a secret buried in its metadata..........
+🦇 INTEL
+See beyond the mask.
+Find what Batman hides in plain sight.`,
+        flag_hash: "6a4688f04bdbd0ea3a98edd5f9b021336c83bfab988dd26886d2e9428ba1b04c", 
         unlocked: true,
         completed: false,
         zipFile: "challenge1.zip",
@@ -15,10 +21,10 @@ const challengesData = [
     },
     {
         id: 2,
-        title: "Cipher Nexus",
-        difficulty: "Medium",
-        description: "The ancient art of cryptography holds the key. Decode the encrypted transmission.",
-        flag_hash: "3a285f67244bc8d0c1d61e72b7d64752c405d100dbd9aae6dc02c9d057febec5",//haxxor{th3_b1gg3r_th3_b3tt3r}
+        title: "Heard of Binary before?",
+        difficulty: "Easy",
+        description: "Bits repeat. Numbers hide. Find the hidden twin in a monotone maze of binary — brute force trembles, cleverness prevails.",
+        flag_hash: "c11987d8cfb2e63dce27b63fe8275829393081dd631dd6a28a7deea0bd84d6ab",
         unlocked: false,
         completed: false,
         zipFile: "challenge2.zip",
@@ -27,9 +33,9 @@ const challengesData = [
     {
         id: 3,
         title: "BrickSploit",
-        difficulty: "Hard",
-        description: "The final barrier stands before you. Break through the last firewall.",
-        flag_hash: "3a285f67244bc8d0c1d61e72b7d64752c405d100dbd9aae6dc02c9d057febec5",//haxxor{th3_b1gg3r_th3_b3tt3r}
+        difficulty: "Medium",
+        description: "Break this last wall standing between your win against haxxor !!",
+        flag_hash: "3a285f67244bc8d0c1d61e72b7d64752c405d100dbd9aae6dc02c9d057febec5",
         unlocked: false,
         completed: false,
         zipFile: "challenge3.zip",
