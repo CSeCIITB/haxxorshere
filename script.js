@@ -26,10 +26,10 @@ const challengesData = [
     },
     {
         id: 3,
-        title: "System Override",
+        title: "BrickSploit",
         difficulty: "Hard",
         description: "The final barrier stands before you. Break through the last firewall.",
-        flag_hash: "5c2ebab3f8b54b66f6ed607eb326ceabe0b50eec01b65dd4df3ccec8f0da56b5", //CTF{final_boss}
+        flag_hash: "3a285f67244bc8d0c1d61e72b7d64752c405d100dbd9aae6dc02c9d057febec5",//haxxor{th3_b1gg3r_th3_b3tt3r}
         unlocked: false,
         completed: false,
         zipFile: "challenge3.zip",
