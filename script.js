@@ -23,7 +23,15 @@ Find what Batman hides in plain sight.`,
         id: 2,
         title: "Heard of Binary before?",
         difficulty: "Easy",
-        description: "Bits repeat. Numbers hide. Find the hidden twin in a monotone maze of binary — brute force trembles, cleverness prevails.",
+        description: `📜 STORY
+You think you understand numbers?
+You think binary is just 0s and 1s?
+One prime speaks, the other listens, bound in perfect monotone.
+Find the twin I hid in the noise — if your system still remembers how to think.
+
+💡 INTEL
+Bits repeat. Numbers hide.
+Find the hidden twin in a monotone maze of binary — brute force trembles, cleverness prevails.`,
         flag_hash: "c11987d8cfb2e63dce27b63fe8275829393081dd631dd6a28a7deea0bd84d6ab",
         unlocked: false,
         completed: false,
@@ -34,7 +42,15 @@ Find what Batman hides in plain sight.`,
         id: 3,
         title: "BrickSploit",
         difficulty: "Medium",
-        description: "Break this last wall standing between your win against haxxor !!",
+        description: `🔥 STORY
+So… you cracked my first two puzzles? Cute.
+You think you’re smarter than me? Then face my last wall — the final test.
+I’ve built this challenge from pure rage and precision, every bounce a trap, every pixel a weapon.
+
+💀 INTEL
+Let’s see how clever you really are.
+The game obeys *my* rules — unless you dare to twist them.
+Break my code, exploit my world, and watch your last brick fall… if you can.`,
         flag_hash: "3a285f67244bc8d0c1d61e72b7d64752c405d100dbd9aae6dc02c9d057febec5",
         unlocked: false,
         completed: false,
