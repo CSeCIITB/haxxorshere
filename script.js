@@ -31,7 +31,8 @@ Find the twin I hid in the noise — if your system still remembers how to think
 
 💡 INTEL
 Bits repeat. Numbers hide.
-Find the hidden twin in a monotone maze of binary — brute force trembles, cleverness prevails.`,
+Find the hidden twin in a monotone maze of binary — brute force trembles, cleverness prevails.
+The flag is haxxor{p_q}`,
         flag_hash: "c11987d8cfb2e63dce27b63fe8275829393081dd631dd6a28a7deea0bd84d6ab",
         unlocked: false,
         completed: false,
