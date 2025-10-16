@@ -461,7 +461,7 @@ function updateVolume() {
 
 
 // Typing animation effect
-function typeText(element, text, speed = 50) {
+function typeText(element, text, speed = 100) {
     element.textContent = '';
     let i = 0;
 
